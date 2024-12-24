@@ -1435,21 +1435,21 @@ const spiData = [
   })
 
   // task 6: print all record with Sindhi language and name starts with A
-  // app.get('/student/lang/:lang/start/:start',(req,res)=>{
-  //   const lang=req.params.lang.toLowerCase();
-  //   const strat=req.params.strat.toLowerCase();
+  app.get('/student/lang/:lang/start/:start',(req,res)=>{
+    const lang=req.params.lang.toLowerCase();
+    const start=req.params.start.toLowerCase();
 
-  //   const index=spiData.filter(student=>student.language.toLowerCase()===lang)
+    const index=spiData.filter(student=>student.language.toLowerCase()===lang && student.name.toLowerCase().startsWith(start))
 
-  //   const ans={
-  //     isSuccess: true,
-  //     count: index.length,
-  //     msg:"data retrived successfully",
-  //     data: index
-  //   }
+    const ans={
+      isSuccess: true,
+      count: index.length,
+      msg:"data retrived successfully",
+      data: index
+    }
 
-  //   res.send(ans)
-  // })
+    res.send(ans)
+  })
 
   app.listen(process.env.PORT,()=>{
     console.log(`Server is running on port ${process.env.PORT}`)
