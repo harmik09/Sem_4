@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sixlab/layout/vertical.dart';
+import 'layout/firstlayout.dart';
+import 'layout/secondlayout.dart';
+import 'layout/vertical.dart';
+import 'layout/horizontal.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -32,8 +36,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-        home: const Vertical()
 
+
+
+        // home: const Vertical()
+        // home: const FirstLayout()
+      home: const SecondLayout(),
       // home: const Horizontal()
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
