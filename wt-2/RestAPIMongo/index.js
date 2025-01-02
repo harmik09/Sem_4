@@ -3,14 +3,14 @@ const Student = require('./model/Student');
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const atlasUrl = "mongodb+srv://student:student123@student.2n4nv.mongodb.net/?retryWrites=true&w=majority&appName=student/Student";
+const atlasUrl = "mongodb+srv://student:student123@student.2n4nv.mongodb.net/test";
 
 mongoose.connect(atlasUrl).then(() => {
     console.log("connected to DB Server");
 
     const app = express();
 
-    app.use(bodyParser.json);
+    app.use(bodyParser.json());
 
 
     // getAll
@@ -31,7 +31,7 @@ mongoose.connect(atlasUrl).then(() => {
     })
 
     // insert(create)
-    app.post("/student", async (req, res) => {
+    app.post("/student/post", async (req, res) => {
         const obj = new Student({
             StudentName: req.body.StudentName,
             StudentMobile: req.body.StudentMobile,
