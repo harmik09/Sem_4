@@ -21,11 +21,13 @@ mongoose.connect(atlasUrl).then(()=>{
     // getById
     app.get("/faculty/:id",async (req,res)=>{
         const data=await Faculty.findOne({_id:req.params.id});
+        res.send(data)
     });
 
     // delete
     app.delete("/faculty/:id",async (req,res)=>{
         const data=await Faculty.deleteOne({_id:req.params.id});
+        res.send(data)
     });
 
     // insert
