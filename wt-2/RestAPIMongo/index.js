@@ -20,7 +20,7 @@ mongoose.connect(atlasUrl).then(() => {
     });
 
     // getByID
-    app.get("./student/:id", async (req, res) => {
+    app.get("/student/:id", async (req, res) => {
         const data = await Student.findOne({ _id: req.params.id });
         res.send(data);
     });
@@ -43,13 +43,13 @@ mongoose.connect(atlasUrl).then(() => {
     });
 
     // update 
-    app.patch("/student/:id", async(req, res) => {
-        let stu=await Student.findOne({ _id: req.params.id });
-        stu.StudentName= req.body.StudentName;
-        stu.StudentMobile= req.body.StudentMobile;
-        stu.StudentEmail= req.body.StudentEmail;
-    
-        const datad=await stu.save();
+    app.patch("/student/:id", async (req, res) => {
+        let stu = await Student.findOne({ _id: req.params.id });
+        stu.StudentName = req.body.StudentName;
+        stu.StudentMobile = req.body.StudentMobile;
+        stu.StudentEmail = req.body.StudentEmail;
+
+        const datad = await stu.save();
         res.send(data);
     });
 
