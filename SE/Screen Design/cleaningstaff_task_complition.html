@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Completion Update</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Task Completion Update</h1>
+
+    <!-- Task Completion Form -->
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <form>
+          
+
+          <!-- Task Selection -->
+          <div class="mb-3">
+            <label for="taskName" class="form-label">Select Task</label>
+            <select class="form-select" id="taskName" required>
+              <option value="" disabled selected>Choose a task</option>
+              <option value="cleaning">General Cleaning</option>
+              <option value="floor_washing">Floor Washing</option>
+              <option value="bathroom_cleaning">Bathroom Cleaning</option>
+              <option value="gym_equipment">Gym Equipment Cleaning</option>
+            </select>
+          </div>
+
+          <!-- Completion Time -->
+          <div class="mb-3">
+            <label for="completionTime" class="form-label">Time Taken (in minutes)</label>
+            <input type="number" class="form-control" id="completionTime" placeholder="Enter time taken" min="1" required>
+          </div>
+
+          <!-- Comments -->
+          <div class="mb-3">
+            <label for="comments" class="form-label">Comments</label>
+            <textarea class="form-control" id="comments" rows="4" placeholder="Enter any comments or notes" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary w-100">Submit Task Completion</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
